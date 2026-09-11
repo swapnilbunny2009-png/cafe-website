@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uncle Chad Cafe & Restro — Raj Nagar, Ghaziabad</title>
+<meta name="description" content="Uncle Chad Cafe & Restro — a pure-vegetarian continental, North Indian & fusion cafe in Raj Nagar, Ghaziabad. Pizza, pasta, chaap, shisha lounge & more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#2a1a12;
+    --espresso-2:#211208;
+    --ink:#1c1006;
+    --cream:#f7efe0;
+    --paper:#fbf6ea;
+    --marigold:#e2a233;
+    --marigold-deep:#c1811d;
+    --clay:#b5452f;
+    --sage:#727a54;
+    --line: rgba(28,16,6,0.12);
+    --line-dark: rgba(247,239,224,0.16);
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:450;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:inherit;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  @media (max-width:720px){ .wrap{padding:0 20px;} }
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,239,224,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px; max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{display:flex; align-items:baseline; gap:8px; text-decoration:none;}
+  .brand .name{font-family:'Fraunces', serif; font-size:22px; font-weight:600; color:var(--ink);}
+  .brand .sub{font-size:11px; letter-spacing:.04em; color:var(--sage); font-style:italic;}
+  nav.links{display:flex; gap:30px; font-size:15px;}
+  nav.links a{text-decoration:none; color:var(--ink); opacity:.75; transition:opacity .2s;}
+  nav.links a:hover{opacity:1;}
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--espresso); color:var(--cream);
+    padding:10px 18px; border-radius:3px; text-decoration:none;
+    font-size:14px; white-space:nowrap;
+  }
+  .nav-mobile-hide{display:flex;}
+  @media (max-width:780px){
+    .nav-mobile-hide{display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse 900px 500px at 82% -10%, rgba(226,162,51,0.18), transparent 60%),
+      var(--espresso);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .hero-row{
+    max-width:var(--maxw); margin:0 auto; padding:96px 32px 72px;
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap:56px; align-items:end;
+  }
+  .kicker{
+    display:flex; align-items:center; gap:10px;
+    font-size:13px; color:var(--marigold); margin-bottom:22px;
+  }
+  .kicker svg{width:16px;height:16px;flex:none;}
+  .hero h1{
+    font-size:clamp(40px, 6vw, 72px);
+    line-height:0.98;
+    color:var(--cream);
+  }
+  .hero h1 em{font-style:italic; color:var(--marigold); font-weight:450;}
+  .hero p.lede{
+    margin-top:24px; max-width:46ch;
+    font-size:18px; color:rgba(247,239,224,0.78); font-weight:300;
+  }
+  .hero-ctas{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:3px; text-decoration:none;
+    font-size:14.5px; font-weight:500; border:1px solid transparent;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--marigold); color:var(--ink);}
+  .btn-ghost{border-color:rgba(247,239,224,0.35); color:var(--cream);}
+
+  .hero-photo{
+    position:relative; align-self:stretch;
+    border-radius:3px; overflow:hidden;
+    min-height:380px;
+    background:linear-gradient(160deg,#3a271a,#1c1006);
+    border:1px solid var(--line-dark);
+  }
+  .hero-photo img{width:100%; height:100%; object-fit:cover; min-height:380px;}
+  .hero-photo .tag{
+    position:absolute; left:16px; bottom:16px;
+    background:rgba(28,16,6,0.72); color:var(--cream);
+    font-size:12px; padding:7px 12px; border-radius:2px;
+    border:1px solid rgba(247,239,224,0.18);
+  }
+
+  .stat-strip{
+    border-top:1px solid var(--line-dark);
+  }
+  .stat-row{
+    max-width:var(--maxw); margin:0 auto; padding:22px 32px;
+    display:flex; flex-wrap:wrap; gap:36px; font-size:14px; color:rgba(247,239,224,0.85);
+  }
+  .stat-row .stat b{color:var(--marigold); font-family:'Fraunces',serif; font-weight:600; font-size:16px; margin-right:6px;}
+
+  /* ---------- section shell ---------- */
+  section{padding:88px 0;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:48px; flex-wrap:wrap;
+  }
+  .eyebrow{font-size:13px; color:var(--clay); margin-bottom:10px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px);}
+  .section-head p{max-width:38ch; color:#5a4c3c; font-size:15.5px; margin-top:4px;}
+
+  /* ---------- about ---------- */
+  .about{background:var(--paper);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;}
+  .about-photo{
+    border-radius:3px; overflow:hidden; aspect-ratio:4/5; background:#ded0b4;
+    border:1px solid var(--line);
+  }
+  .about-photo img{width:100%; height:100%; object-fit:cover;}
+  .about-copy p{font-size:17px; color:#3a2c1c; margin:0 0 18px;}
+  .about-copy p:first-child{font-family:'Fraunces',serif; font-size:22px; line-height:1.4; color:var(--ink);}
+  .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;}
+  .pill{
+    font-size:12.5px; padding:7px 13px; border:1px solid var(--line);
+    border-radius:20px; color:#4a3c2c; background:var(--cream);
+  }
+  .pill.veg::before{content:""; display:inline-block; width:8px; height:8px; background:var(--sage); border-radius:50%; margin-right:7px;}
+
+  /* ---------- menu ---------- */
+  .menu{background:var(--espresso-2); color:var(--cream);}
+  .menu .section-head p{color:rgba(247,239,224,0.65);}
+  .menu .eyebrow{color:var(--marigold);}
+  .menu-grid{display:grid; grid-template-columns:1fr 1fr; gap:52px 64px;}
+  .menu-cat h3{font-size:19px; color:var(--marigold); margin-bottom:18px; font-weight:600; font-style:italic;}
+  .menu-item{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:13px 0; border-bottom:1px solid var(--line-dark);
+    gap:16px;
+  }
+  .menu-item .name{font-family:'Fraunces',serif; font-size:17px; color:var(--cream);}
+  .menu-item .note{display:block; font-family:'Work Sans',sans-serif; font-size:12.5px; color:rgba(247,239,224,0.55); margin-top:3px;}
+  .menu-item .leader{flex:1; border-bottom:1px dotted rgba(247,239,224,0.25); margin:0 4px 6px;}
+  .menu-note{margin-top:36px; font-size:13.5px; color:rgba(247,239,224,0.55); font-style:italic;}
+
+  /* ---------- gallery ---------- */
+  .gallery{background:var(--paper);}
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:150px; gap:14px;
+  }
+  .gallery-grid .g-item{border-radius:3px; overflow:hidden; background:#ded0b4; position:relative; border:1px solid var(--line);}
+  .gallery-grid .g-item img{width:100%; height:100%; object-fit:cover;}
+  .g-item.tall{grid-row:span 2;}
+  @media (max-width:900px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px;}
+  }
+
+  /* ---------- reviews ---------- */
+  .reviews{background:var(--cream); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);}
+  .review-card{background:var(--paper); padding:34px 30px;}
+  .stars{color:var(--marigold-deep); font-size:14px; letter-spacing:2px; margin-bottom:14px;}
+  .review-card p.quote{font-family:'Fraunces',serif; font-size:18px; line-height:1.5; color:var(--ink); font-style:italic;}
+  .review-card .who{margin-top:18px; font-size:13px; color:#6b5b46;}
+  @media (max-width:900px){.review-grid{grid-template-columns:1fr;}}
+
+  /* ---------- careers ---------- */
+  .careers{background:var(--espresso); color:var(--cream);}
+  .careers .eyebrow{color:var(--marigold);}
+  .careers .section-head p{color:rgba(247,239,224,0.65);}
+  .careers-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:start;}
+  .careers-copy p{font-size:16px; color:rgba(247,239,224,0.75); margin:0 0 16px;}
+  .careers-copy ul{margin:22px 0 0; padding:0; list-style:none;}
+  .careers-copy li{
+    padding:10px 0; border-top:1px solid var(--line-dark);
+    font-size:14.5px; color:rgba(247,239,224,0.8);
+  }
+  .job-form{
+    background:var(--espresso-2); border:1px solid var(--line-dark); border-radius:3px;
+    padding:36px;
+  }
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:12.5px; letter-spacing:.02em; color:rgba(247,239,224,0.6); margin-bottom:7px;}
+  .field input, .field select, .field textarea{
+    width:100%; background:transparent; border:1px solid var(--line-dark);
+    border-radius:2px; padding:11px 13px; color:var(--cream); font-family:'Work Sans',sans-serif;
+    font-size:14.5px;
+  }
+  .field select{appearance:none; -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23e2a233' stroke-width='1.6'><path d='M2 5l5 5 5-5'/></svg>");
+    background-repeat:no-repeat; background-position:right 13px center;
+  }
+  .field select option{background:var(--espresso-2); color:var(--cream);}
+  .field input::placeholder, .field textarea::placeholder{color:rgba(247,239,224,0.35);}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--marigold);}
+  .field textarea{resize:vertical; min-height:100px;}
+  .job-form .btn-primary{border:none; cursor:pointer; margin-top:6px;}
+  .form-note{font-size:12px; color:rgba(247,239,224,0.45); margin-top:14px;}
+  @media (max-width:640px){ .field-row{grid-template-columns:1fr;} }
+
+  /* ---------- visit ---------- */
+  .visit{background:var(--paper);}
+  .visit-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .info-block{border-top:1px solid var(--line); padding:20px 0;}
+  .info-block:first-child{border-top:none; padding-top:0;}
+  .info-block h4{font-size:12.5px; letter-spacing:.03em; color:var(--clay); margin:0 0 8px; text-transform:none;}
+  .info-block .value{font-family:'Fraunces',serif; font-size:19px;}
+  .info-block .value a{text-decoration:none; border-bottom:1px solid var(--line);}
+  .map-frame{border-radius:3px; overflow:hidden; border:1px solid var(--line); min-height:420px;}
+  .map-frame iframe{width:100%; height:100%; min-height:420px; border:0; display:block;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--espresso); color:rgba(247,239,224,0.6); padding:44px 0 28px;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:13.5px;}
+  .foot-row .brand-mini{font-family:'Fraunces',serif; color:var(--cream); font-size:17px;}
+  .foot-links{display:flex; gap:22px;}
+  .foot-links a{text-decoration:none; color:rgba(247,239,224,0.6);}
+
+  @media (max-width:900px){
+    .hero-row{grid-template-columns:1fr; padding-top:64px;}
+    .hero-photo{min-height:260px;}
+    .hero-photo img{min-height:260px;}
+    .about-grid, .visit-grid, .careers-grid{grid-template-columns:1fr; gap:36px;}
+    .menu-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-row">
+    <a class="brand" href="#top">
+      <span class="name">Uncle Chad</span><span class="sub">Cafe &amp; Restro</span>
+    </a>
+    <nav class="links nav-mobile-hide">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#careers">Careers</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="nav-cta" href="tel:+919910749037">Call · +91 99107 49037</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-row">
+      <div>
+        <div class="kicker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c2-4 2-8 0-12M12 20c2-4 2-8 0-12M20 20c2-4 2-8 0-12"/></svg>
+          Raj Nagar, Ghaziabad — pure veg kitchen &amp; shisha lounge
+        </div>
+        <h1>Good food,<br>slow evenings<br><em>&amp; a little smoke.</em></h1>
+        <p class="lede">A relaxed, all-vegetarian cafe on RDC's Block 1 — wood-fired pizza, baked pasta, Amritsari chaap and shisha, served in a room that's built for lingering.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+919910749037">Call to reserve a table</a>
+          <a class="btn btn-ghost" href="#visit">Get directions</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://b.zmtcdn.com/data/pictures/chains/9/22304959/1762329621c8dca8e7-f360-4438-a178-a1273560333e.jpeg" alt="Uncle Chad Cafe & Restro dining room" loading="eager" onerror="this.style.display='none'">
+        <span class="tag">RDC, Raj Nagar</span>
+      </div>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-row">
+        <span class="stat"><b>100%</b>Pure vegetarian</span>
+        <span class="stat"><b>₹600</b>approx. for two</span>
+        <span class="stat"><b>Continental</b>North Indian &amp; fusion</span>
+        <span class="stat"><b>Shisha</b>lounge on request</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="https://b.zmtcdn.com/data/reviews_photos/cd2/600f6b0ab69307ab6469e978c58b3cd2_1770638956.jpg" alt="Food at Uncle Chad Cafe" onerror="this.parentElement.style.background='linear-gradient(160deg,#e2a233,#b5452f)'; this.remove()">
+      </div>
+      <div class="about-copy">
+        <p>A neighbourhood cafe that doesn't rush you out the door.</p>
+        <p>Uncle Chad Cafe &amp; Restro sits on the first floor at D-46, RDC — a clean, well-lit room done up for exactly the kind of evening you're planning, whether that's a family dinner, a first date, or an office get-together that runs long. Every dish on the menu is vegetarian, from the wood-fired pizzas to the tandoor.</p>
+        <p>Regulars come back for the Baked Pasta, Amritsari Chaap and the Special Pizza — and stay for the shisha, which locals rate as some of the best around Raj Nagar.</p>
+        <div class="pill-row">
+          <span class="pill veg">Pure vegetarian</span>
+          <span class="pill">Indoor, AC seating</span>
+          <span class="pill">Dine-in, takeaway &amp; delivery</span>
+          <span class="pill">Good for groups &amp; dates</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">On the table</div>
+          <h2>A few things worth<br>ordering twice</h2>
+        </div>
+        <p>A pure-veg spread of continental comfort food, North Indian chaap and late-evening shisha — this is a short list of house favourites, not the full menu.</p>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-cat">
+          <h3>From the oven</h3>
+          <div class="menu-item"><span class="name">Special Pizza<span class="note">the house signature</span></span></div>
+          <div class="menu-item"><span class="name">Baked Pasta<span class="note">most-ordered dish on the menu</span></span></div>
+          <div class="menu-item"><span class="name">Mushroom Wrap</span></div>
+          <div class="menu-item"><span class="name">Loaded Cheese Garlic Bread</span></div>
+        </div>
+        <div class="menu-cat">
+          <h3>Tandoor &amp; wok</h3>
+          <div class="menu-item"><span class="name">Amritsari Chaap<span class="note">smoky, tandoor-charred soya chaap</span></span></div>
+          <div class="menu-item"><span class="name">Chilli Garlic Noodles</span></div>
+          <div class="menu-item"><span class="name">Paneer Tikka Burger</span></div>
+          <div class="menu-item"><span class="name">Veg Manchurian Rice</span></div>
+        </div>
+        <div class="menu-cat">
+          <h3>Sips</h3>
+          <div class="menu-item"><span class="name">House Mocktails<span class="note">rotating seasonal flavours</span></span></div>
+          <div class="menu-item"><span class="name">Cold Coffee</span></div>
+          <div class="menu-item"><span class="name">Masala Chai</span></div>
+        </div>
+        <div class="menu-cat">
+          <h3>Evening &amp; shisha</h3>
+          <div class="menu-item"><span class="name">Shisha / Sheesha<span class="note">multiple flavours, ask your server</span></span></div>
+          <div class="menu-item"><span class="name">Group &amp; party seating<span class="note">good for birthdays &amp; get-togethers</span></span></div>
+        </div>
+      </div>
+      <p class="menu-note">Prices and availability vary by season — call +91 99107 49037 for the current à la carte and party menu.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Around the cafe</div>
+          <h2>What it looks like<br>on a good night</h2>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="g-item tall"><img src="https://b.zmtcdn.com/data/pictures/chains/9/22304959/1762329621c8dca8e7-f360-4438-a178-a1273560333e.jpeg" alt="Uncle Chad Cafe dining room" onerror="this.parentElement.style.background='linear-gradient(160deg,#e2a233,#b5452f)'; this.remove()"></div>
+        <div class="g-item"><img src="https://b.zmtcdn.com/data/reviews_photos/4d3/0a5cb430dee9f8387ec3af6b107164d3_1770881714.jpg" alt="Dish at Uncle Chad Cafe" onerror="this.parentElement.style.background='#c1811d'; this.remove()"></div>
+        <div class="g-item"><img src="https://b.zmtcdn.com/data/reviews_photos/c72/228e333e2444c3d376b63208ed9a7c72_1770881719.jpg" alt="Dish at Uncle Chad Cafe" onerror="this.parentElement.style.background='#8a6a3e'; this.remove()"></div>
+        <div class="g-item tall"><img src="https://b.zmtcdn.com/data/reviews_photos/61b/4aa3504e13949ee6003f31718d38f61b_1770638956.jpg" alt="Dish at Uncle Chad Cafe" onerror="this.parentElement.style.background='linear-gradient(160deg,#b5452f,#2a1a12)'; this.remove()"></div>
+        <div class="g-item"><img src="https://b.zmtcdn.com/data/reviews_photos/4f4/b5f4b234f522cfcd5a81b20f539174f4_1770881722.jpg" alt="Dish at Uncle Chad Cafe" onerror="this.parentElement.style.background='#727a54'; this.remove()"></div>
+        <div class="g-item"><img src="https://b.zmtcdn.com/data/reviews_photos/ab3/0affce3b269f928ba19221917c83bab3_1767348053.jpg" alt="Dish at Uncle Chad Cafe" onerror="this.parentElement.style.background='#c1811d'; this.remove()"></div>
+        <div class="g-item"><img src="https://b.zmtcdn.com/data/reviews_photos/30c/bc477df577f491ab599c649a2028230c_1767348057.jpg" alt="Dish at Uncle Chad Cafe" onerror="this.parentElement.style.background='#8a6a3e'; this.remove()"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap" style="padding-bottom:0;">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Word around Raj Nagar</div>
+          <h2>What guests are saying</h2>
+        </div>
+        <p>3.8 out of 5, from diners on District &amp; Zomato.</p>
+      </div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Called it a top-notch pure-veg spot — classy, elegant, and perfect for a date, a family outing or a party.</p>
+        <div class="who">Satyam Sharma</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Praised the premium ambience, quick service and friendly staff, and said they'd be back often.</p>
+        <div class="who">Shashank Tyagi</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Said Ghaziabad finally has a spot with this kind of ambience — no more driving to Delhi for it.</p>
+        <div class="who">Vishant Tyagi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREERS -->
+  <section class="careers" id="careers">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Join the team</div>
+          <h2>Work with us</h2>
+        </div>
+        <p>Looking for kitchen, service or shisha staff. Send us a few details and we'll get back to you.</p>
+      </div>
+
+      <div class="careers-grid">
+        <div class="careers-copy">
+          <p>Uncle Chad Cafe &amp; Restro is always happy to hear from people who care about food and hospitality — whether you're an experienced hand or just starting out.</p>
+          <ul>
+            <li>Kitchen &amp; tandoor staff</li>
+            <li>Servers &amp; floor staff</li>
+            <li>Shisha specialists</li>
+            <li>Management &amp; front desk</li>
+          </ul>
+        </div>
+
+        <form class="job-form" action="https://formsubmit.co/swapnil.bunny.2009@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New job enquiry — Uncle Chad Cafe & Restro">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div class="field-row">
+            <div class="field">
+              <label for="jf-name">Full name</label>
+              <input id="jf-name" type="text" name="Name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="jf-phone">Phone number</label>
+              <input id="jf-phone" type="tel" name="Phone" placeholder="+91 " required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="jf-email">Email</label>
+              <input id="jf-email" type="email" name="Email" placeholder="you@example.com" required>
+            </div>
+            <div class="field">
+              <label for="jf-role">Role interested in</label>
+              <select id="jf-role" name="Role interested in">
+                <option>Kitchen / Tandoor staff</option>
+                <option>Server / Floor staff</option>
+                <option>Shisha specialist</option>
+                <option>Management / Front desk</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="jf-exp">Experience</label>
+            <input id="jf-exp" type="text" name="Experience" placeholder="e.g. 2 years, cafe service">
+          </div>
+
+          <div class="field">
+            <label for="jf-msg">Message</label>
+            <textarea id="jf-msg" name="Message" placeholder="Tell us a bit about yourself"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send enquiry</button>
+          <p class="form-note">This goes straight to our hiring inbox — we'll reach out if there's a fit.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <div class="eyebrow">Find us</div>
+        <h2 style="margin-bottom:28px;">Come by</h2>
+
+        <div class="info-block">
+          <h4>Address</h4>
+          <div class="value">D-46, RDC, Block 1,<br>P &amp; T Colony, Raj Nagar,<br>Ghaziabad, Uttar Pradesh 201002</div>
+        </div>
+        <div class="info-block">
+          <h4>Phone</h4>
+          <div class="value"><a href="tel:+919910749037">+91 99107 49037</a></div>
+        </div>
+        <div class="info-block">
+          <h4>Hours</h4>
+          <div class="value" style="font-size:16px;">Open daily from 11:30 AM<br><span style="font-size:13.5px; font-family:'Work Sans',sans-serif; color:#6b5b46;">Call ahead for last-order timing &amp; party bookings.</span></div>
+        </div>
+        <div class="info-block">
+          <h4>Good for</h4>
+          <div class="value" style="font-size:16px;">Lunch, dinner, takeaway, home delivery &amp; shisha evenings</div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=D-46,+RDC,+Block+1,+P+%26+T+Colony,+Raj+Nagar,+Ghaziabad,+Uttar+Pradesh+201002&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Uncle Chad Cafe & Restro location"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span class="brand-mini">Uncle Chad Cafe &amp; Restro</span>
+    <div class="foot-links">
+      <a href="tel:+919910749037">+91 99107 49037</a>
+      <a href="https://www.instagram.com/unclechadcafe/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#visit">D-46, RDC, Raj Nagar, Ghaziabad</a>
+    </div>
+    <span>© 2026 Uncle Chad Cafe &amp; Restro</span>
+  </div>
+</footer>
+
+</body>
+</html>
